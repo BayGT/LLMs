@@ -4,14 +4,10 @@ Una empresa quiere evaluar qué tan bien se pueden separar sus clientes en grupo
 
 Tu Misión:
 
-Escribe una función llamada:
+Escribe una función llamada evaluar_calidad_clustering(df, columnas, n_clusters) que realice lo siguiente:
 
-evaluar_calidad_clustering(df, columnas, n_clusters)
-
-que:
-
-Reciba un DataFrame con datos de clientes.
 Use únicamente las columnas indicadas en columnas.
-Estandarice los datos usando StandardScaler.
+Estandarice los datos usando StandardScaler de sklearn.
 Aplique KMeans con n_clusters.
 Calcule el Silhouette Score usando sklearn.metrics.silhouette_score.
+Devuelva un único número (float) con el valor del Silhouette Score.
