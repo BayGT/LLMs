@@ -1,20 +1,11 @@
-El Problema:
-
-Un equipo de machine learning quiere evaluar si su modelo de regresión está sobreajustando (overfitting). Para ello, necesitan comparar el error en entrenamiento vs el error en validación.
-
 Tu Misión:
 
-Escribe una función llamada:
+Escribe una función llamada evaluar_overfitting(df, columnas, columna_objetivo, test_size) que realice lo siguiente:
 
-evaluar_overfitting(df, columnas, columna_objetivo, test_size)
-
-que:
-
-Reciba un DataFrame con variables numéricas.
 Use columnas como variables predictoras.
 Use columna_objetivo como variable objetivo (continua).
 Divida los datos en entrenamiento y test usando train_test_split con test_size.
-Entrene un modelo de LinearRegression.
+Entrene un modelo de LinearRegression de sklearn.
 Calcule el error cuadrático medio (MSE) en:
 entrenamiento
 test
