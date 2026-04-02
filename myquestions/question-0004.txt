@@ -1,3 +1,7 @@
+El Problema:
+
+Un equipo de machine learning quiere evaluar si su modelo de regresión está sobreajustando (overfitting). Para ello, necesitan comparar el error en entrenamiento vs el error en validación.
+
 Tu Misión:
 
 Escribe una función llamada evaluar_overfitting(df, columnas, columna_objetivo, test_size) que realice lo siguiente:
