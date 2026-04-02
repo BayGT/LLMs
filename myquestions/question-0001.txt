@@ -10,8 +10,8 @@ evaluar_calidad_clustering(df, columnas, n_clusters)
 
 que:
 
-- Reciba un DataFrame con datos de clientes.
-- Use únicamente las columnas indicadas en columnas.
-- Estandarice los datos usando StandardScaler.
-- Aplique KMeans con n_clusters.
-- Calcule el Silhouette Score usando sklearn.metrics.silhouette_score.
+Reciba un DataFrame con datos de clientes.
+Use únicamente las columnas indicadas en columnas.
+Estandarice los datos usando StandardScaler.
+Aplique KMeans con n_clusters.
+Calcule el Silhouette Score usando sklearn.metrics.silhouette_score.
