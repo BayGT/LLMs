@@ -4,16 +4,11 @@ Un equipo de ciencia de datos quiere evaluar rápidamente qué tan útil es cada
 
 Tu Misión:
 
-Escribe una función llamada:
+Escribe una función llamada calcular_importancia_features(df, columnas, columna_objetivo) que realice lo siguiente:
 
-calcular_importancia_features(df, columnas, columna_objetivo)
-
-que:
-
-Reciba un DataFrame con variables numéricas.
 Use las columnas indicadas en columnas como variables predictoras.
 Use columna_objetivo como variable objetivo (binaria: 0 o 1).
-Estandarice las variables con StandardScaler.
+Estandarice las variables con StandardScaler de sklearn.
 Entrene un modelo de LogisticRegression de sklearn.
 Obtenga los coeficientes del modelo.
 Devuelva un array de numpy con la magnitud absoluta de los coeficientes, en el mismo orden que columnas.
