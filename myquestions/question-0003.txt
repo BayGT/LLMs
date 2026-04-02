@@ -1,0 +1,21 @@
+El Problema:
+
+Un equipo quiere detectar si existe multicolinealidad en un conjunto de variables numéricas antes de entrenar un modelo de machine learning. Para ello, necesitan calcular el Variance Inflation Factor (VIF) de cada variable.
+
+Tu Misión:
+
+Escribe una función llamada:
+
+calcular_vif(df, columnas)
+
+que:
+
+Reciba un DataFrame con variables numéricas.
+Use únicamente las columnas indicadas en columnas.
+Para cada columna:
+La considere como variable objetivo.
+Use el resto como variables predictoras.
+Entrene un modelo de regresión lineal (LinearRegression de sklearn).
+Calcule el VIF como:
+𝑉𝐼𝐹= 1/(1−𝑅^2) 
+Devuelva un array de numpy con el VIF de cada variable, en el mismo orden que columnas.
