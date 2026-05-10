@@ -57,25 +57,27 @@ def evaluar_lift_por_deciles(df, score_col, target_col, n_bins=5):
     return resultado
 
 
-# Comprobación de la función solución usando el caso de uso generado
-
-entrada, salida_esperada = generar_caso_de_uso_evaluar_lift_por_deciles()
+# Comprobación usando el mismo caso de uso ya generado
 
 resultado = evaluar_lift_por_deciles(**entrada)
 
 print("=== RESULTADO DE LA FUNCIÓN SOLUCIÓN ===")
 print("Tabla lift:")
 print(resultado["tabla_lift"])
+
 print("\nAUC:")
 print(resultado["auc"])
+
 print("\nNúmero de segmentos:")
 print(resultado["n_segmentos"])
 
 print("\n=== OUTPUT ESPERADO DEL GENERADOR ===")
 print("Tabla lift esperada:")
 print(salida_esperada["tabla_lift"])
+
 print("\nAUC esperado:")
 print(salida_esperada["auc"])
+
 print("\nNúmero de segmentos esperado:")
 print(salida_esperada["n_segmentos"])
 
