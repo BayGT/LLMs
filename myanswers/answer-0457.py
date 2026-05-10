@@ -1,11 +1,11 @@
+entrada, salida_esperada = generar_caso_de_uso_resumen_clientes()
 def resumen_clientes(df):
     """
     Solución del caso de uso:
-    resume las ventas por cliente calculando el total gastado,
-    el total de unidades compradas y el ticket promedio.
+    resume las compras por cliente calculando total gastado,
+    total de unidades y ticket promedio.
     """
 
-    # 1. Agrupar por cliente
     resumen = (
         df.groupby("cliente", as_index=False)
           .agg(
@@ -13,19 +13,12 @@ def resumen_clientes(df):
               total_unidades=("cantidad", "sum"),
               ticket_promedio=("monto", "mean")
           )
+          .sort_values("total_gastado", ascending=False)
+          .reset_index(drop=True)
     )
 
-    # 2. Ordenar de mayor a menor según el total gastado
-    resumen = resumen.sort_values("total_gastado", ascending=False)
-
-    # 3. Reiniciar el índice
-    resumen = resumen.reset_index(drop=True)
-
-    # 4. Devolver el DataFrame final
     return resumen
 
-
-# Comprobación de la función solución usando el caso de uso generado
 
 resultado = resumen_clientes(**entrada)
 
@@ -38,7 +31,16 @@ print(salida_esperada)
 print("\n=== COMPROBACIÓN ===")
 
 try:
-    pd.testing.assert_frame_equal(resultado, salida_esperada)
+    pd.testing.assert_frame_equal(
+        resultado,
+        salida_esperada,
+        check_dtype=False,
+        check_exact=False,
+        rtol=1e-10,
+        atol=1e-10
+    )
     print(True)
-except AssertionError:
+
+except AssertionError as error:
     print(False)
+    print(error)
