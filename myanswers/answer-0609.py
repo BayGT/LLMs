@@ -4,11 +4,9 @@ def calcular_retencion_semanal(df, user_col, fecha_col):
     data = df.copy()
 
     data[fecha_col] = pd.to_datetime(data[fecha_col])
-
     data["semana"] = data[fecha_col].dt.to_period("W-SUN").dt.start_time
 
     cohortes = data.groupby(user_col)["semana"].min().rename("cohorte")
-
     data = data.merge(cohortes, on=user_col, how="left")
 
     data["semana_relativa"] = (
@@ -29,7 +27,6 @@ def calcular_retencion_semanal(df, user_col, fecha_col):
     )
 
     conteos = conteos.merge(tam_cohorte, on="cohorte", how="left")
-
     conteos["retencion"] = conteos["usuarios_activos"] / conteos["tam_cohorte"]
 
     tabla_retencion = conteos.pivot_table(
@@ -41,7 +38,6 @@ def calcular_retencion_semanal(df, user_col, fecha_col):
     )
 
     tabla_retencion = tabla_retencion.sort_index().sort_index(axis=1)
-
     tabla_retencion.columns.name = None
 
     return tabla_retencion
