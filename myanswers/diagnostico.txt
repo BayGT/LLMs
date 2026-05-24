@@ -1,4 +1,6 @@
 Diagnóstico pregunta 0609:
-La solución desarrollada para calcular_retencion_semanal(df, user_col, fecha_col) cumple con la lógica solicitada, ya que convierte la fecha a formato datetime, calcula la semana calendario, identifica la cohorte de cada usuario, calcula la semana relativa y construye la matriz de retención usando operaciones de pandas como groupby, nunique y pivot_table.
+La solución desarrollada para calcular_retencion_semanal(df, user_col, fecha_col) cumple con la lógica solicitada, ya que convierte la columna de fecha a formato datetime, calcula la semana calendario que inicia en lunes, identifica la cohorte de cada usuario, calcula la semana relativa y construye la matriz de retención usando operaciones de pandas como groupby, nunique y pivot_table.
 
-Sin embargo, el evaluador reporta un error antes de ejecutar la solución. El problema está en el generador de caso de uso, porque intenta ejecutar la función auxiliar _calcular_retencion_semanal_referencia() sin pasarle los argumentos requeridos: df, user_col y fecha_col.
+Además, realicé una prueba manual en Colab ejecutando el generador de caso de uso junto con el solucionador, y el resultado obtenido coincidió con el output esperado del generador.
+
+Sin embargo, en el evaluador automático se presenta un error antes de ejecutar mi solución. El problema está en el generador de caso de uso, porque intenta ejecutar la función auxiliar _calcular_retencion_semanal_referencia() sin pasarle los argumentos requeridos: df, user_col y fecha_col. Por esta razón, el error corresponde al generador del caso de uso y no al solucionador entregado.
