@@ -1,5 +1,5 @@
 Diagnóstico pregunta 0609:
-La solución desarrollada para calcular_retencion_semanal(df, user_col, fecha_col) cumple con la lógica solicitada, ya que convierte la columna de fecha a formato datetime, calcula la semana calendario que inicia en lunes, identifica la cohorte de cada usuario, calcula la semana relativa y construye la matriz de retención usando operaciones de pandas como groupby, nunique y pivot_table.
+La solución desarrollada para calcular_retencion_semanal(df, user_col, fecha_col) sigue lo que se pide, ya que convierte la columna de fecha a formato datetime, calcula la semana calendario que inicia en lunes, calcula la semana relativa y construye la matriz de retención usando operaciones de pandas como groupby, nunique y pivot_table.
 
 Además, realicé una prueba manual en Colab ejecutando el generador de caso de uso junto con el solucionador, y el resultado obtenido coincidió con el output esperado del generador.
 
